@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Review</title>
+</head>
+<body>
+    <h1>Jankiest Rides</h1>
+    <h2>View Review</h2>
+    <a href="/"><button>Listings</button></a>
+    <div>
+        <h3>
+            <%= review.name %>
+        </h3>
+        <h4>
+            <%= review.rating %>
+        </h4>
+        <h5>
+            <%= review.userReview %>
+        </h5>
+    </div>
+    <a href="/review/<%= review._id %>/edit"><button>Edit</button></a>
+    <form action="/review/<%= review._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+</body>
+</html>

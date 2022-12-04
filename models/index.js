@@ -26,3 +26,4 @@ mongoose.connection.on('error', (error) => {
 
 // access models
 module.exports.Car = require('./car.js');
+module.exports.Review = require('./review');

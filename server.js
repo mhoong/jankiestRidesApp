@@ -5,7 +5,7 @@ const port = 3000;
 const methodOverride = require('method-override');
 const db = require('./models');
 const carsCtrl = require('./controllers/cars');
-// const reviewsCtrl = require('./controllers/reviews');
+const reviewsCtrl = require('./controllers/reviews');
 
 
 // middleware
@@ -18,14 +18,18 @@ app.use(express.urlencoded({ extended: true }));
 // routes
 app.get('/', (req, res) => {
     db.Car.find({}, (err, cars) => {
-        res.render('index', {
-            cars: cars
+        db.Review.find({}, (err, reviews) => {
+            res.render('index', {
+                cars: cars,
+                reviews: reviews
+            })
         })
     })
 });
 
 
-app.use('/car', carsCtrl)
+app.use('/car', carsCtrl);
+app.use('/review', reviewsCtrl);
 
 
 // listener

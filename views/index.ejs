@@ -40,5 +40,25 @@
             </a> 
         <% } %>
     </div>
+
+    <h2>Reviews</h2>
+    <a href="/review/new"><button>New Review</button></a>
+    <div>
+        <% for (let review of reviews) { %>
+            <a href="/review/<%= review._id %>">
+                <figure>
+                    <h3>
+                        <%= review.name %>
+                    </h3>
+                    <h4>
+                        <%= review.rating %>
+                    </h4>
+                    <h5>
+                        <%= review.userReview %>
+                    </h5>
+                </figure>
+            </a> 
+        <% } %>
+    </div>
 </body>
 </html>
