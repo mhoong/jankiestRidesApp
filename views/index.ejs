@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jankiest Rides</title>
+</head>
+<body>
+    <h1>Jankiest Rides</h1>
+    <h2>Cars</h2>
+    <a href="/car/new"><button>New Listing</button></a>
+    <div>
+        <% for (let car of cars) { %>
+            <a href="/car/<%= car._id %>">
+                <figure>
+                    <img src="<%= car.img %>">
+                    <h3>
+                        <%= car.make %>
+                    </h3>
+                    <h3>
+                        <%= car.model %>
+                    </h3>
+                    <h3>
+                        <%= car.year %>
+                    </h3>
+                    <h4>
+                        <%= car.mi %>
+                    </h4>
+                    <h4>
+                        <%= car.color %>
+                    </h4>
+                    <h4>
+                        <%= car.price %>
+                    </h4>
+                    <h4>
+                        <%= car.description %>
+                    </h4>
+                </figure>
+            </a> 
+        <% } %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Listing</title>
+</head>
+<body>
+    <h1>Jankiest Rides</h1>
+    <h2>View Listing</h2>
+    <a href="/"><button>Listings</button></a>
+    <div>
+        <img src="<%= car.img %>">
+        <h3>
+            <%= car.make %>
+        </h3>
+        <h3>
+            <%= car.model %>
+        </h3>
+        <h3>
+            <%= car.year %>
+        </h3>
+        <h4>
+            <%= car.mi %>
+        </h4>
+        <h4>
+            <%= car.color %>
+        </h4>
+        <h4>
+            <%= car.price %>
+        </h4>
+        <h4>
+            <%= car.description %>
+        </h4>
+    </div>
+    <a href="/car/<%= car._id %>/edit"><button>Edit</button></a>
+    <form action="/car/<%= car._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+</body>
+</html>

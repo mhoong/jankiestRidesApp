@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Listing</title>
+</head>
+<body>
+    <h1>Jankiest Rides</h1>
+    <h2>Edit Listing</h2>
+    <a href="/"><button>Listings</button></a>
+    <div>
+        <form action="/car/<%= car._id %>?_method=PUT" method="post">
+            <label for="make">Make: </label>
+            <input type="text" name="make" value="<%= car.make %>" />
+            <label for="model">Model: </label>
+            <input type="text" name="model" value="<%= car.model %>" />
+            <label for="year">Year: </label>
+            <input type="number" name="year" value="<%= car.year %>" />
+            <label for="mi">Miles: </label>
+            <input type="number" name="mi" value="<%= car.mi %>" />
+            <label for="color">Color: </label>
+            <input type="text" name="color" value="<%= car.color %>" />
+            <label for="price">Price: </label>
+            <input type="number" name="price" value="<%= car.price %>" />
+            <label for="description">Description: </label>
+            <input type="text" name="description" value="<%= car.description %>" />
+            <label for="img">Image: </label>
+            <input type="text" name="img" value="<%= car.img %>" />
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</body>
+</html>
