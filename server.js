@@ -35,5 +35,5 @@ app.use('/review', reviewsCtrl);
 
 // listener
 app.listen(port, () => {
-    // console.log(`Running on localhost:${port}`)
+    console.log(`Running on localhost:${port}`)
 });
