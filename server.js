@@ -1,8 +1,9 @@
 // dependencies
 const express = require ('express');
 const app = express();
-const port = 3000;
+const port = 3000
 const methodOverride = require('method-override');
+require('dotenv').config();
 const db = require('./models');
 const carsCtrl = require('./controllers/cars');
 const reviewsCtrl = require('./controllers/reviews');

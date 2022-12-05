@@ -34,18 +34,8 @@ const seed = [
     }
 ]
 
-db.Car.deleteMany({}, (err, cars) => {
-    if (err) {
-        console.log('ERROR in remove', err)
-    }else{
-        console.log('removed seeds')
 
-        db.Car.insertMany(seed, (err, cars) => {
-            if(err) {
-                console.log('ERROR in insert', err)
-            } else {
-                console.log('created seeds')
-            }
-        })
-    }
+db.Car.deleteMany({}, (err, cars) => {
+    db.Car.insertMany(seed, (err, cars) => {
+    })
 })
