@@ -5,20 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Review</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        body {
+            margin-left: 2%;
+            background-image: linear-gradient(rgb(92, 139, 247), rgb(153, 219, 153));
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        label {
+            margin: 4% 0 0 0 ;
+        }
+        input {
+            margin: 0 0 10% 0;
+        }
+        #listingsbtn {
+            margin: 2% 0 8% 2%;
+        }
+        #savebtn {
+            margin: 2% 0 31% 2%;
+        }
+        .last {
+            margin-bottom: 5%;
+        }
+    </style>
 </head>
 <body>
     <h1>Jankiest Rides</h1>
     <h2>New Review</h2>
-    <a href="/"><button>Listings</button></a>
+    <a href="/"><button id="listingsbtn">Listings</button></a>
     <div>
         <form action="/review/" method="post">
             <label for="name">Name: </label>
             <input type="text" name="name" />
+            <br>
             <label for="rating">Rating (0-10): </label>
             <input type="number" name="rating" />
-            <label for="userReview">Review: </label>
-            <input type="text" name="userReview" />
-            <button type="submit">Save</button>
+            <br>
+            <label class="last" for="userReview">Review: </label>
+            <input class="last" type="text" name="userReview" />
+            <br>
+            <button id="savebtn" type="submit">Save</button>
         </form>
     </div>
 </body>

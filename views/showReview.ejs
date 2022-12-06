@@ -5,11 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Review</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        body {
+            margin-left: 3%;
+            background-image: linear-gradient(rgb(92, 139, 247), rgb(153, 219, 153));
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        label {
+            margin: 4% 0 0 0 ;
+        }
+        input {
+            margin: 0 0 4% 0;
+        }
+        #listingsbtn {
+            margin: 2% 0 4% 1%;
+        }
+        #deletebtn {
+            margin: 2% 0 20% 2%;
+        }
+    </style>
 </head>
 <body>
     <h1>Jankiest Rides</h1>
     <h2>View Review</h2>
-    <a href="/"><button>Listings</button></a>
+    <a href="/"><button id="listingsbtn">Listings</button></a>
     <div>
         <h3>
             <%= review.name %>
@@ -21,9 +44,9 @@
             <%= review.userReview %>
         </h5>
     </div>
-    <a href="/review/<%= review._id %>/edit"><button>Edit</button></a>
+    <a href="/review/<%= review._id %>/edit"><button id="editbtn">Edit</button></a>
     <form action="/review/<%= review._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete</button>
+        <button id="deletebtn" type="submit">Delete</button>
     </form>
 </body>
 </html>

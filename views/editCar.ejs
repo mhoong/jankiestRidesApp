@@ -5,30 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Listing</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        body {
+            margin-left: 2%;
+            background-image: linear-gradient(rgb(92, 139, 247), rgb(153, 219, 153));
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        label {
+            margin: 4% 0 0 0 ;
+        }
+        input {
+            margin: 0 0 4% 0;
+        }
+        #listingsbtn {
+            margin: 2% 0 4% 2%;
+        }
+        #savebtn {
+            margin: 2% 0 20% 2%;
+        }
+        .last {
+            margin-bottom: 5%;
+        }
+    </style>
 </head>
 <body>
     <h1>Jankiest Rides</h1>
     <h2>Edit Listing</h2>
-    <a href="/"><button>Listings</button></a>
+    <a href="/"><button id="listingsbtn">Listings</button></a>
     <div>
         <form action="/car/<%= car._id %>?_method=PUT" method="post">
             <label for="make">Make: </label>
             <input type="text" name="make" value="<%= car.make %>" />
+            <br>
             <label for="model">Model: </label>
             <input type="text" name="model" value="<%= car.model %>" />
+            <br>
             <label for="year">Year: </label>
             <input type="number" name="year" value="<%= car.year %>" />
+            <br>
             <label for="mi">Miles: </label>
             <input type="number" name="mi" value="<%= car.mi %>" />
+            <br>
             <label for="color">Color: </label>
             <input type="text" name="color" value="<%= car.color %>" />
+            <br>
             <label for="price">Price: </label>
             <input type="number" name="price" value="<%= car.price %>" />
+            <br>
             <label for="description">Description: </label>
             <input type="text" name="description" value="<%= car.description %>" />
+            <br>
             <label for="img">Image: </label>
-            <input type="text" name="img" value="<%= car.img %>" />
-            <button type="submit">Save</button>
+            <input class="last" type="text" name="img" value="<%= car.img %>" />
+            <br>
+            <button class="last" id="savebtn" type="submit">Save</button>
         </form>
     </div>
 </body>

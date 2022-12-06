@@ -5,20 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Review</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        body {
+            margin-left: 2%;
+            background-image: linear-gradient(rgb(92, 139, 247), rgb(153, 219, 153));
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        label {
+            margin: 4% 0 0 0 ;
+        }
+        input {
+            margin: 0 0 4% 0;
+        }
+        #listingsbtn {
+            margin: 2% 0 4% 2%;
+        }
+        #savebtn {
+            margin: 2% 0 15% 2%;
+        }
+        .last {
+            margin-bottom: 4%;
+        }
+    </style>
 </head>
 <body>
     <h1>Jankiest Rides</h1>
     <h2>Edit Review</h2>
-    <a href="/"><button>Listings</button></a>
+    <a href="/"><button id="listingsbtn">Listings</button></a>
     <div>
         <form action="/review/<%= review._id %>?_method=PUT" method="post">
-            <label for="name">Name: </label>
-            <input type="text" name="name" value="<%= review.name %>" />
+            <label class="first" for="name">Name: </label>
+            <input class="first" type="text" name="name" value="<%= review.name %>" />
+            <br>
             <label for="rating">Rating (0-10): </label>
             <input type="number" name="rating" value="<%= review.rating %>" />
-            <label for="userReview">Review: </label>
-            <input type="text" name="userReview" value="<%= review.userReview %>" />
-            <button type="submit">Save</button>
+            <br>
+            <label class="last" for="userReview">Review: </label>
+            <input class="last" type="text" name="userReview" value="<%= review.userReview %>" />
+            <br>
+            <button id="savebtn" type="submit">Save</button>
         </form>
     </div>
 </body>
